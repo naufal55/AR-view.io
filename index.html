@@ -45,13 +45,13 @@
     </div>
     <a-scene embedded arjs>
       <a-assets>
-        <a-asset-item id="mymodel" src="./FastRun.gltf"></a-asset-item>
+        <a-asset-item id="mymodel" src="./FastRun.fbx"></a-asset-item>
       </a-assets>
       <a-marker preset="custom" type='pattern' url='pattern-g3023.patt'>
         <a-entity
           position="0 0 0"
           scale="0.01 0.01 0.01"
-          gltf-model="#mymodel"
+          fbx-model="#mymodel"
           animation-mixer="clip: mixamo.com"
         ></a-entity>
       </a-marker>
