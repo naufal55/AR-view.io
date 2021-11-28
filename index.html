@@ -2,20 +2,8 @@
 <html>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-	<script src="js/aframe-ar.js"></script>
-    <script src="https://cdn.rawgit.com/mrdoob/three.js/r85/examples/js/loaders/GLTF2Loader.js"></script> 
-        <script>
-            AFRAME.registerComponent('play-on-scan', {
-          init: function () {
-            var el = this.el;
-            el.addEventListener('markerscanned-or-something', function () {
-              el.setAttribute('animation-mixer', {clip: 'mixamo.com', loop: 'once'});
-            });
-          }
-        });
-    </script>
   <script>
     window.onload = function () {
       document
@@ -57,14 +45,14 @@
     </div>
     <a-scene embedded arjs>
       <a-assets>
-        <a-asset-item id="mymodel" src="./FastRun.gltf"></a-asset-item>
+        <a-asset-item id="mymodel" src="./FastRun.fbx"></a-asset-item>
       </a-assets>
       <a-marker preset="custom" type='pattern' url='pattern-g3023.patt'>
         <a-entity
           position="0 0 0"
           scale="0.01 0.01 0.01"
           gltf-model="#mymodel"
-          play-on-scan="clip: mixamo.com"
+         animation-mixer="clip: MIXAMO.COM; loop:once"
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
